@@ -1,43 +1,39 @@
 <?php
-class Studente {
-    public $nome;
-    public $cognome;
-    public $classe;
-}
 
-$prova = new Studente();
-$prova->nome = "Matteo";
-$prova->cognome = "Federici";
-$prova->classe = 125;
+include __DIR__ . "/models/Studente.php";
 
-$giuseppe = new Studente();
-$giuseppe->nome = "Giuseppe";
-$giuseppe->cognome = "De Rosa";
-$giuseppe->classe = 125;
+$studente = new Studente("Luca", "Lambiase", 001);
+$studente->nome = "Luca Tommaso";
 
-$francesco = new Studente();
-$francesco->nome = "Francesco";
-$francesco->cognome = "Madonna";
-$francesco->classe = 125;
+$students = [
+    new Studente("Matteo", "Federici", 125),
+    new Studente("Giuseppe", "De Rosa", 125),
+    new Studente("Francesco", "Sbagliato", 125)
+];
 
-$students = [ $prova, $giuseppe, $francesco ];
+$students[2]->cognome = "Madonna";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP OOP</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <h1>Hello OOP World</h1>
+
     <ul>
         <?php foreach ($students as $studente) { ?>
-            <li><?= "$studente->nome $studente->cognome #$studente->classe" ?></li>
+            <li><?= $studente->descrizione() ?></li>
         <?php } ?>
     </ul>
-    
+
 </body>
+
 </html>
