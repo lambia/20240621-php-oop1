@@ -19,6 +19,8 @@ $francesco = new Studente();
 $francesco->nome = "Francesco";
 $francesco->cognome = "Madonna";
 $francesco->classe = 125;
+
+$students = [ $prova, $giuseppe, $francesco ];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,9 +34,9 @@ $francesco->classe = 125;
 
     <h1>Hello OOP World</h1>
     <ul>
-        <li><?= "$prova->nome $prova->cognome: Classe #$prova->classe" ?></li>
-        <li><?= "$giuseppe->nome $giuseppe->cognome: Classe #$giuseppe->classe" ?></li>
-        <li><?= "$francesco->nome $francesco->cognome: Classe #$francesco->classe" ?></li>
+        <?php foreach ($students as $studente) { ?>
+            <li><?= "$studente->nome $studente->cognome #$studente->classe" ?></li>
+        <?php } ?>
     </ul>
     
 </body>
