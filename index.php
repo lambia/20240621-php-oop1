@@ -18,7 +18,7 @@ include __DIR__ . "/data.php";
     <h1>Hello OOP World</h1>
     <ul>
         <?php foreach ($studenti as $studente) {
-            echo "<li>" . $studente->nome . " da " . $studente->address?->city . "</li>";
+            echo "<li>" . $studente->descrizione() . "</li>";
         }?>
     </ul>
 
