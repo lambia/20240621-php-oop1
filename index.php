@@ -2,16 +2,10 @@
 
 include __DIR__ . "/models/Studente.php";
 
-$studente = new Studente("Luca", "Lambiase", 001);
-$studente->nome = "Luca Tommaso";
+$luca = new Studente("Luca", "Lambiase", 001);
+$luca->nome = "Luca Tommaso";
 
-$students = [
-    new Studente("Matteo", "Federici", 125),
-    new Studente("Giuseppe", "De Rosa", 125),
-    new Studente("Francesco", "Sbagliato", 125)
-];
-
-$students[2]->cognome = "Madonna";
+$altro = new Studente("Mario", "Rossi", 22, "mariorossi@gmail.com");
 
 ?>
 <!DOCTYPE html>
@@ -28,11 +22,11 @@ $students[2]->cognome = "Madonna";
 
     <h1>Hello OOP World</h1>
 
-    <ul>
-        <?php foreach ($students as $studente) { ?>
-            <li><?= $studente->descrizione() ?></li>
-        <?php } ?>
-    </ul>
+    <pre>
+        <?= var_dump($luca) ?>
+        <?= var_dump($altro) ?>
+        <?= var_dump($indirizzo) ?>
+    </pre>
 
 </body>
 
