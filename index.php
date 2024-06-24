@@ -1,10 +1,6 @@
 <?php
 
-include __DIR__ . "/models/Studente.php";
-include __DIR__ . "/models/Address.php";
-
-$luca = new Studente("Luca", "Lambiase", 1, new Address("Via Roma, 123", "Torino", 10135) );
-$altro = new Studente("Mario", "Rossi", 22, new Address("Viale Alberato, 101", "Torino", 10135) );
+include __DIR__ . "/data.php";
 
 ?>
 <!DOCTYPE html>
@@ -20,10 +16,15 @@ $altro = new Studente("Mario", "Rossi", 22, new Address("Viale Alberato, 101", "
 <body>
 
     <h1>Hello OOP World</h1>
+    <ul>
+        <?php foreach ($studenti as $studente) {
+            echo "<li>" . $studente->nome . " da " . $studente->address?->city . "</li>";
+        }?>
+    </ul>
 
+    <h2>VarDump $studenti</h2>
     <pre>
-        <?= var_dump($luca) ?>
-        <?= var_dump($altro) ?>
+        <?= var_dump($studenti) ?>
     </pre>
 
 </body>

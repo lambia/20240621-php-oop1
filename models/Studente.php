@@ -7,7 +7,8 @@ class Studente
     public $classe;
     public $address;
 
-    public function __construct($nome, $cognome, $classe, Address $address) {
+    public function __construct($nome, $cognome, $classe, Address $address = null) {
+
         $this->nome = $nome;
         $this->cognome = $cognome;
         $this->classe = $classe;
