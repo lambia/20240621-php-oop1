@@ -2,12 +2,16 @@
 
 class Studente
 {
-    public $codiceFiscale; //utile per poter assegnare il valore in secondo momento nel costruttore o altrove
-    public $email = ""; //utile quando una variabile d'istanza ha un valore fisso che non dipende da controlli o logica
+    public $nome;
+    public $cognome;
+    public $classe;
+    public $address;
 
-    //classe può essere passato al costruttore altrimenti ha un valore di default
-    public function __construct(public $nome, public $cognome, public $classe = "") {
-        $this->codiceFiscale = ""; //questo viene settato sempre uguale ma potrebbe far parte di un controllo (business logic)
+    public function __construct($nome, $cognome, $classe, Address $address) {
+        $this->nome = $nome;
+        $this->cognome = $cognome;
+        $this->classe = $classe;
+        $this->address = $address;
     }
 
     public function nomeCompleto()

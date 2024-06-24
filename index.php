@@ -1,11 +1,10 @@
 <?php
 
 include __DIR__ . "/models/Studente.php";
+include __DIR__ . "/models/Address.php";
 
-$luca = new Studente("Luca", "Lambiase", 001);
-$luca->nome = "Luca Tommaso";
-
-$altro = new Studente("Mario", "Rossi", 22, "mariorossi@gmail.com");
+$luca = new Studente("Luca", "Lambiase", 1, new Address("Via Roma, 123", "Torino", 10135) );
+$altro = new Studente("Mario", "Rossi", 22, new Address("Viale Alberato, 101", "Torino", 10135) );
 
 ?>
 <!DOCTYPE html>
@@ -25,7 +24,6 @@ $altro = new Studente("Mario", "Rossi", 22, "mariorossi@gmail.com");
     <pre>
         <?= var_dump($luca) ?>
         <?= var_dump($altro) ?>
-        <?= var_dump($indirizzo) ?>
     </pre>
 
 </body>
